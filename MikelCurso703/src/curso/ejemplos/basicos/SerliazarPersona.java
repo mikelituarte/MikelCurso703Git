@@ -91,7 +91,7 @@ public class SerliazarPersona implements Serializable{
 		arrayPersonas = ficheroToArrayPersonas(ruta);
 		mostrarArrayPersonas(arrayPersonas);
 		//mostrarArrayPersonas(arrayPersonas);
-		System.out.println("Fin programa");
+		System.out.println("Fin programa Carajo!");
 		
 		
 	}
