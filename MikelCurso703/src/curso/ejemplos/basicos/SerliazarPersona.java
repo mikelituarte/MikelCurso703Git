@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.Scanner;
 
 
 public class SerliazarPersona implements Serializable{
@@ -20,7 +21,7 @@ public class SerliazarPersona implements Serializable{
 		String nombre = "";
 		
 		for(int i=0; i<array.length; i++){
-			nombre = "Persona1"+ i;
+			nombre = "Persona"+ i;
 			edad = (int)Math.floor(Math.random()*50);
 			p = new Persona(nombre,edad);
 			array[i] = p;
@@ -30,16 +31,30 @@ public class SerliazarPersona implements Serializable{
 		return array;
 	}
 	
+	public static Persona pedirPersona(){
+		Persona persona = null;
+		Scanner sc = new Scanner(System.in);
+		String nombre = null;
+		int edad = 0;
+		
+		System.out.println("Introduce un Nombre:");
+		nombre = sc.next();
+		System.out.println("Introduce una edad:");
+		edad = sc.nextInt();
+		
+		
+		
+		return persona;
+	}
+	
 	private static void mostrarArrayPersonas(Persona[] array) {
 		for (int i = 0; i < array.length; i++) {
 			array[i].mostrar();
 		}
 	}
 	
-	private static void arrayPersonasToFichero(String ruta,Persona[] array) throws IOException{
+	private static void arrayPersonasToFichero(String ruta, Persona[] array) throws IOException{
 
-	//	Persona p = new Persona("persona1", 20);
-		//Persona p1 = null;
 		ObjectOutputStream salida = null;
 		
 		try{
@@ -75,14 +90,15 @@ public class SerliazarPersona implements Serializable{
 		return p;
 	}
 	
+	
+	
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
 		System.out.println("Inicio pograma");
 
-		String ruta =  "Personas.dat";
+		String ruta =  "Personas2";
 		Persona[] arrayPersonas = null;
 		
 
-		
 		
 		arrayPersonas = crearArraysPersonas(3);
 		arrayPersonasToFichero(ruta, arrayPersonas);
@@ -91,7 +107,7 @@ public class SerliazarPersona implements Serializable{
 		arrayPersonas = ficheroToArrayPersonas(ruta);
 		mostrarArrayPersonas(arrayPersonas);
 		//mostrarArrayPersonas(arrayPersonas);
-		System.out.println("Fin programa Carajo!");
+		System.out.println("Fin programa");
 		
 		
 	}
