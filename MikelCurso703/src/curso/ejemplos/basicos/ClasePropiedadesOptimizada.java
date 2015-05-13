@@ -1,6 +1,6 @@
 package curso.ejemplos.basicos;
 
-import java.io.FileInputStream;
+
 
 public class ClasePropiedadesOptimizada {
 
@@ -18,9 +18,10 @@ public class ClasePropiedadesOptimizada {
 			String idioma = ficheroPropiedades("www");
 			idioma.length();
 		}catch(Exception e){
-			e.printStackTrace();
-			System.out.println("AQui");
+			//e.printStackTrace();
+			System.out.println("Fin programa");
 		}
+		System.out.println("Aqui");
 		
 	}
 }
